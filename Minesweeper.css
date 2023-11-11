@@ -1,0 +1,183 @@
+html,
+body {
+  font-family: "Digital Dismay";
+  font-weight: bold;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  margin: auto;
+  max-width: 800px;
+  border: 10px solid darkgray;
+  background-color: lightgray;
+}
+
+#board div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  border: 1px solid white;
+  font-size: 30px;
+}
+
+#board div:not([class]):hover {
+  filter: brightness(106%);
+  background: inherit;
+}
+#board div:not([class]):hover::after {
+  content: "?";
+}
+#board div.dynamite::after {
+  background: red;
+  content: "\1F9E8";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#board div.flagged:not(.tile-clicked)::after {
+  content: "\1F6A9";
+}
+
+#f-button {
+  width: 180px;
+  height: 70px;
+  font-size: 28px;
+  background-color: cornflowerblue;
+  border: cornflowerblue;
+  border-radius: 10%;
+}
+
+#new-game-button {
+  width: 180px;
+  height: 70px;
+  font-size: 28px;
+  background-color: cornflowerblue;
+  border: cornflowerblue;
+  border-radius: 10%;
+  font-weight: bold;
+  font-family: "Digital Dismay";
+}
+
+#row-count,
+#col-count,
+#mine-count {
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px;
+  font-family: "Digital Dismay";
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  font-family: "Digital Dismay";
+
+}
+
+#beginner,
+#intermediate,
+#expert {
+  /* The native appearance is hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px steelblue;
+  background-color: steelblue;
+  height: 15px;
+  width: 15px;
+  font-family: "Digital Dismay";
+}
+
+#beginner:checked,
+#intermediate:checked,
+#expert:checked {
+  /* Set the clicked radio button's outer circle color */
+  box-shadow: 0 0 0 2px #E04836;
+  background-color: #E04836;
+}
+
+#settings label {
+  font-size: 17px;
+}
+
+#mine-c, #timer {
+  font-family: "Digital Dismay";
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid #808080;
+  padding: 5px;
+  width: 200px;
+  margin: 2px;
+}
+
+#mine-c {
+  background-color: #FAFAFA;
+  color: #000000;
+}
+
+#timer {
+  background-color: #FAFAFA;
+  color: #000000;
+}
+
+.tile-clicked {
+  background: burlywood;
+}
+
+.m1 {
+  color: blueviolet;
+}
+
+.m2 {
+  color: blue;
+}
+
+.m3 {
+  color: red;
+}
+
+.m4 {
+  color: brown;
+}
+
+.m5 {
+  color: deeppink;
+}
+
+.m6 {
+  color: yellow;
+}
+
+.m7 {
+  color: lime;
+}
+
+.m8 {
+  color: gold;
+}
+
+@font-face {
+  font-family: "Digital Dismay";
+  src: url("./digital-dismay.otf") format("truetype");
+}

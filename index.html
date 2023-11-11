@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="Minesweeper.css">
+</head>
+<body>
+  <div id="settings">
+      <label for="beginner"><input type="radio" name="difficulty" id="beginner" value="beginner" checked>Beginner</label>
+      <label for="intermediate"><input type="radio" name="difficulty" id="intermediate" value="intermediate">Intermediate</label>
+      <label for="expert"><input type="radio" name="difficulty" id="expert" value="expert">Expert</label>
+      <div id="numerical-values">
+        Rows:<input id="row-count" type="number" min="1" value="9"><!--9-is-default-->
+        Columns:<input id="col-count" type="number" min="1" value="9"><!--easy-difficulty-->
+        Mines:<input id="mine-count" type="number" min="1" value="10" max="80"><!--10-bombs--><!--max-9x9-minus-one-->
+      </div>
+  </div>
+  <div class="row">
+  <h1>Mines: <span id="mine-c">0</span></h1>
+  <h1>Time: <span id="timer">0.00 seconds</span></h1><!-- Added timer element -->
+  </div>
+  <div id="board"></div>
+  <br>
+  <div class="row" style="gap: 50px;">
+  <button id="f-button">🚩</button>
+  <button id="new-game-button" onclick="newGame()">New Game</button>
+</div>
+<script src="Minesweeper.js"></script>
+</body>
+</html>
